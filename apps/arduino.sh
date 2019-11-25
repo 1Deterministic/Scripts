@@ -16,6 +16,7 @@ fi
 if [[ $osname == $fedora ]]; then
     sudo dnf install arduino -y
     sudo usermod -aG dialout $username
+    sudo usermod -aG lock $username
 fi
 
 if [[ $osname == $ubuntu ]]; then
