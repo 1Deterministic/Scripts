@@ -32,6 +32,7 @@ find . -name "*.sh" -exec chmod +x {} \;
 # tweaks/install-codecs.sh
 # tweaks/install-vulkan-radeon.sh
 # tweaks/install-kvantum.sh # kvantum and qt5ct will help you set qt themes on gtk destkop environments
+# tweaks/enable-1g-hugepages.sh
 
 # basic apps for kde
 # apps/ark.sh
