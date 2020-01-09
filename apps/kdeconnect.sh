@@ -17,6 +17,8 @@ fi
 
 if [[ $osname == $fedora ]]; then
     sudo dnf install kde-connect -y
+    sudo firewall-cmd --add-service=kdeconnect --permanent
+    sudo firewall-cmd --reload
 fi
 
 if [[ $osname == $ubuntu ]]; then
