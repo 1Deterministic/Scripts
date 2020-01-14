@@ -10,6 +10,7 @@ fi
 
 if [[ $osname == $debian ]]; then
     sudo apt install gnome-core -y
+    sudo apt install nautilus -y
 fi
 
 if [[ $osname == $fedora ]]; then
