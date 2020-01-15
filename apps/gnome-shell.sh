@@ -14,7 +14,10 @@ if [[ $osname == $debian ]]; then
 fi
 
 if [[ $osname == $fedora ]]; then
-    $missing
+    sudo dnf groupinstall "GNOME Desktop Environment" -y
+    sudo systemctl enable gdm
+    sudo systemctl set-default graphical.target
+    sudo dracut -f
 fi
 
 if [[ $osname == $ubuntu ]]; then
