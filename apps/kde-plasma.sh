@@ -13,6 +13,8 @@ if [[ $osname == $debian ]]; then
     sudo apt install plasma-nm -y
     sudo systemctl enable wpa_supplicant.service
     sudo bash -c "cat strings/config-networkmanager-managed > /etc/NetworkManager/NetworkManager.conf"
+    # as NetworkManager will be used, this will disable the default network handler
+    sudo awk -i inplace '$0~/^allow-hotplug|^iface|^[" "]*address|^[" "]*netmask|^[" "]*gateway/{$0="# "$0};1' "/etc/network/interfaces"
 fi
 
 if [[ $osname == $fedora ]]; then

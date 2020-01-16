@@ -25,7 +25,8 @@ if [[ $osname == $archlinux ]]; then
 fi
 
 if [[ $osname == $debian ]]; then
-    sudo apt purge mutt tracker -y
+    sudo apt purge mutt tracker gnome-logs gnome-disk-utility gnome-contacts yelp totem evince gedit gnome-calculator gnome-characters gnome-font-viewer gnome-system-monitor eog baobab -y
+    sudo dnf autoremove -y
 fi
 
 if [[ $osname == $fedora ]]; then
