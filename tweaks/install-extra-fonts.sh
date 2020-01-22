@@ -2,12 +2,7 @@
 source config.sh
 
 if [[ $osname == $archlinux ]]; then
-    sudo pacman -S ttf-dejavu ttf-droid ttf-croscore ttf-roboto noto-fonts ttf-liberation ttf-ubuntu-font-family --noconfirm
-    git clone https://aur.archlinux.org/ttf-ms-fonts
-    cd ttf-ms-fonts
-    makepkg -si --noconfirm
-    cd ..
-    rm -rf ttf-ms-fonts
+    sudo unzip assets/fonts.zip -d /usr/share/fonts
 fi
 
 if [[ $osname == $debian ]]; then
@@ -16,14 +11,6 @@ if [[ $osname == $debian ]]; then
 fi
 
 if [[ $osname == $fedora ]]; then
-    #sudo dnf install http://olea.org/paquetes-rpm//msttcore-fonts-2.0-6.noarch.rpm -y
-    # I really dont like the noto fonts available on fedora, so this will install the arch linux version manually
-    #sudo mkdir /tmp/noto-fonts
-    #sudo wget https://ia802808.us.archive.org/27/items/archlinux_pkg_noto-fonts/noto-fonts-20190926-2-any.pkg.tar.xz -O /tmp/noto-fonts/noto-fonts.tar.xz
-    #sudo tar xf /tmp/noto-fonts/noto-fonts.tar.xz --directory /tmp/noto-fonts
-    #sudo cp -r /tmp/noto-fonts/etc/fonts/conf.avail/* /etc/fonts/conf.d
-    #sudo cp -r /tmp/noto-fonts/usr/share/fonts/noto /usr/share/fonts
-    #sudo rm -r /tmp/noto-fonts
     sudo unzip assets/fonts.zip -d /usr/share/fonts
 fi
 
