@@ -2,7 +2,7 @@
 source config.sh
 
 if [[ $osname == $archlinux ]]; then
-    sudo unzip assets/fonts.zip -d /usr/share/fonts
+    sudo unzip -n assets/fonts.zip -d /usr/share/fonts
 fi
 
 if [[ $osname == $debian ]]; then
@@ -11,7 +11,7 @@ if [[ $osname == $debian ]]; then
 fi
 
 if [[ $osname == $fedora ]]; then
-    sudo unzip assets/fonts.zip -d /usr/share/fonts
+    sudo unzip -n assets/fonts.zip -d /usr/share/fonts
 fi
 
 if [[ $osname == $ubuntu ]]; then
