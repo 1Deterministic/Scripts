@@ -2,17 +2,17 @@
 source config.sh
 
 if [[ $osname == $archlinux ]]; then
-    pip3 install --user youtube-dl
+    sudo pacman -S youtube-dl --noconfirm
 fi
 
 if [[ $osname == $debian ]]; then
-    pip3 install --user youtube-dl
+    sudo apt install youtube-dl -y
 fi
 
 if [[ $osname == $fedora ]]; then
-    pip3 install --user youtube-dl
+    sudo dnf install youtube-dl -y
 fi
 
 if [[ $osname == $ubuntu ]]; then
-    pip3 install --user youtube-dl
+    sudo apt install youtube-dl -y
 fi

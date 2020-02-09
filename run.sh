@@ -28,6 +28,7 @@ find . -name "*.sh" -exec chmod +x {} \;
 # tweaks/disable-xorg-mouse-acceleration.sh
 # tweaks/fix-qt-looks-on-gtk-based-desktop-environments.sh
 # tweaks/install-vulkan.sh
+# tweaks/install-extra-python-modules.sh
 
 # basic apps for kde
 # apps/ark.sh
@@ -66,6 +67,7 @@ find . -name "*.sh" -exec chmod +x {} \;
 # apps/samba.sh
 # apps/keepassxc.sh
 # apps/openssh.sh
+# apps/youtube-dl.sh
 
 # development tools
 # apps/git.sh
@@ -76,11 +78,6 @@ find . -name "*.sh" -exec chmod +x {} \;
 # apps/eclipse.sh
 # apps/android-studio.sh
 # apps/pycharm-community.sh
-# apps/python-eyed3.sh
-# apps/python-xlsxwriter.sh
-# apps/python-nuitka.sh
-# apps/python-youtube-dl.sh
-# apps/python-kivy.sh
 # apps/postgresql.sh
 # apps/nodejs.sh
 # apps/mysql-workbench.sh
