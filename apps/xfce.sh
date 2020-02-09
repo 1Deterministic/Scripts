@@ -16,7 +16,7 @@ if [[ $osname == $archlinux ]]; then
 fi
 
 if [[ $osname == $debian ]]; then
-    $missing
+    sudo tasksel install xfce-desktop
 fi
 
 if [[ $osname == $fedora ]]; then
