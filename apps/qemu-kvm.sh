@@ -2,7 +2,7 @@
 source config.sh
 
 if [[ $osname == $archlinux ]]; then
-    sudo pacman -S qemu libvirt openbsd-netcat dmidecode virt-manager ebtables dnsmasq perl-sys-virt ovmf multipath-tools--noconfirm
+    sudo pacman -S qemu libvirt openbsd-netcat dmidecode virt-manager ebtables dnsmasq perl-sys-virt ovmf multipath-tools --noconfirm
     sudo usermod -aG libvirt $username
     sudo usermod -aG kvm $username
     sudo systemctl enable libvirtd
