@@ -29,7 +29,7 @@ find . -name "*.sh" -exec chmod +x {} \;
 # tweaks/disable-xorg-mouse-acceleration.sh
 # tweaks/install-codecs.sh
 # tweaks/install-vulkan-radeon.sh
-# tweaks/install-kvantum.sh # kvantum and qt5ct will help you set qt themes on gtk destkop environments
+# tweaks/fix-qt-looks-on-gtk-based-desktop-environments.sh
 
 # basic apps for kde
 # apps/ark.sh
