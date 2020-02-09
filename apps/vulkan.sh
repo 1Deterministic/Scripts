@@ -2,8 +2,7 @@
 source config.sh
 
 if [[ $osname == $archlinux ]]; then
-    sudo pacman -S vulkan-radeon --noconfirm
-    sudo pacman -S lib32-vulkan-radeon --noconfirm
+    sudo pacman -S vulkan-mesa-layer vulkan-icd-loader vulkan-intel vulkan-radeon lib32-vulkan-mesa-layer lib32-vulkan-icd-loader lib32-vulkan-intel lib32-vulkan-radeon --noconfirm
 fi
 
 if [[ $osname == $debian ]]; then

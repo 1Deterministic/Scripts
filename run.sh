@@ -28,7 +28,6 @@ find . -name "*.sh" -exec chmod +x {} \;
 # tweaks/fix-sudden-volume-spikes.sh
 # tweaks/disable-xorg-mouse-acceleration.sh
 # tweaks/install-codecs.sh
-# tweaks/install-vulkan-radeon.sh
 # tweaks/fix-qt-looks-on-gtk-based-desktop-environments.sh
 
 # basic apps for kde
@@ -68,6 +67,7 @@ find . -name "*.sh" -exec chmod +x {} \;
 # apps/samba.sh
 # apps/keepassxc.sh
 # apps/openssh.sh
+# apps/vulkan.sh
 
 # development tools
 # apps/git.sh
