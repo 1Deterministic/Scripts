@@ -25,7 +25,7 @@ find . -name "*.sh" -exec chmod +x {} \;
 # tweaks/improve-font-rendering.sh
 # tweaks/install-extra-fonts.sh
 # tweaks/install-extra-codecs.sh
-# tweaks/install-someonewhocares-hosts.sh
+# tweaks/install-someonewhocares-hosts-file.sh
 # tweaks/fix-sudden-volume-spikes.sh
 # tweaks/disable-xorg-mouse-acceleration.sh
 # tweaks/fix-qt-looks-on-gtk-based-desktop-environments.sh
