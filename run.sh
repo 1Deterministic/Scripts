@@ -81,5 +81,7 @@ find . -name "*.sh" -exec chmod +x {} \;
 # apps/postgresql.sh
 # apps/nodejs.sh
 # apps/mysql-workbench.sh
-# apps/lamp-stack.sh
+# apps/apache-http.sh
+# apps/php.sh
+# apps/mariadb.sh
 # apps/apache-tomcat.sh # installs to /opt
