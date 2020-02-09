@@ -20,5 +20,7 @@ if [[ $osname == $fedora ]]; then
 fi
 
 if [[ $osname == $ubuntu ]]; then
-    $missing
+    sudo dnf install kvantum -y
+    sudo dnf install qt5ct -y
+    sudo bash -c "cat strings/config-kvantum >> /etc/environment"
 fi
