@@ -17,11 +17,9 @@ find . -name "*.sh" -exec chmod +x {} \;
 # apps/gnome-shell.sh
 # apps/xfce.sh
 
-# removes some bloat from the desktop environment installation (can remove more than what you want, please check the script)
-# tweaks/kde-cleaner.sh
-# tweaks/gnome-cleaner.sh
-
 # general system tweaks
+# tweaks/remove-kde-bloat.sh
+# tweaks/remove-gnome-bloat.sh
 # tweaks/improve-font-rendering.sh
 # tweaks/install-extra-fonts.sh
 # tweaks/install-extra-codecs.sh
