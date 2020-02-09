@@ -27,8 +27,6 @@ find . -name "*.sh" -exec chmod +x {} \;
 # tweaks/install-someonewhocares-hosts.sh
 # tweaks/fix-sudden-volume-spikes.sh
 # tweaks/disable-xorg-mouse-acceleration.sh
-# tweaks/install-nvidia-340xx.sh
-# tweaks/fix-kde-nvidia-tearing.sh
 # tweaks/install-codecs.sh
 # tweaks/install-vulkan-radeon.sh
 # tweaks/install-kvantum.sh # kvantum and qt5ct will help you set qt themes on gtk destkop environments
