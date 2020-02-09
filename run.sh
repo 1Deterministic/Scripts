@@ -59,10 +59,10 @@ find . -name "*.sh" -exec chmod +x {} \;
 # apps/kdenlive.sh
 # apps/steam.sh
 # apps/lutris.sh
-# apps/freetube.sh
+# apps/freetube.sh # installs to /opt
 # apps/vmware-player.sh
 # apps/vmware-pro.sh
-# apps/protonmail-desktop.sh
+# apps/protonmail-desktop.sh # installs to /opt
 # apps/retroarch.sh
 # apps/samba.sh
 # apps/keepassxc.sh
@@ -72,14 +72,14 @@ find . -name "*.sh" -exec chmod +x {} \;
 # development tools
 # apps/git.sh
 # apps/gitkraken.sh
-# apps/vscodium.sh
+# apps/vscodium.sh # installs to /opt
 # apps/allegro.sh
 # apps/arduino.sh
 # apps/eclipse.sh
-# apps/android-studio.sh
-# apps/pycharm-community.sh
+# apps/android-studio.sh # installs to /opt
+# apps/pycharm-community.sh # installs to /opt
 # apps/postgresql.sh
 # apps/nodejs.sh
 # apps/mysql-workbench.sh
 # apps/lamp-stack.sh
-# apps/apache-tomcat.sh
+# apps/apache-tomcat.sh # installs to /opt
