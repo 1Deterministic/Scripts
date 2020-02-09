@@ -3,11 +3,6 @@ source config.sh
 
 if [[ $osname == $archlinux ]]; then
     sudo pacman -S gst-libav gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly --noconfirm
-    git clone https://aur.archlinux.org/gst-plugin-libde265
-    cd gst-plugin-libde265
-    makepkg -si --noconfirm
-    cd ..
-    rm -rf gst-plugin-libde265
 fi
 
 if [[ $osname == $debian ]]; then

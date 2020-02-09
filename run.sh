@@ -24,10 +24,10 @@ find . -name "*.sh" -exec chmod +x {} \;
 # general system tweaks
 # tweaks/improve-font-rendering.sh
 # tweaks/install-extra-fonts.sh
+# tweaks/install-extra-codecs.sh
 # tweaks/install-someonewhocares-hosts.sh
 # tweaks/fix-sudden-volume-spikes.sh
 # tweaks/disable-xorg-mouse-acceleration.sh
-# tweaks/install-codecs.sh
 # tweaks/fix-qt-looks-on-gtk-based-desktop-environments.sh
 
 # basic apps for kde
