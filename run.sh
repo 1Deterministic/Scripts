@@ -26,7 +26,7 @@ find . -name "*.sh" -exec chmod +x {} \;
 # tweaks/install-someonewhocares-hosts-file.sh
 # tweaks/fix-sudden-volume-spikes.sh
 # tweaks/disable-xorg-mouse-acceleration.sh
-# tweaks/fix-qt-looks-on-gtk-based-desktop-environments.sh
+# tweaks/fix-qt-looks-on-gtk-based-desktop-environments.sh # requires manually configuring the theme in kvantummanager and kvantum style, icon theme and fonts in qt5ct
 # tweaks/install-vulkan.sh
 # tweaks/install-extra-python-modules.sh
 
