@@ -41,6 +41,13 @@ find . -name "*.sh" -exec chmod +x {} \;
 
 # basic apps for gnome
 # apps/gnome-tweak-tool.sh
+# apps/gnome-calculator.sh
+# apps/evince.sh
+# apps/eye-of-gnome.sh
+# apps/gnome-system-monitor.sh
+# apps/gedit.sh
+# apps/gnome-disk-utility.sh
+# apps/totem.sh
 
 # basic apps for xfce
 # apps/xfce-goodies.sh
