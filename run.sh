@@ -67,8 +67,6 @@ find . -name "*.sh" -exec chmod +x {} \;
 # apps/steam.sh
 # apps/lutris.sh
 # apps/freetube.sh # installs to /opt
-# apps/vmware-player.sh
-# apps/vmware-pro.sh
 # apps/protonmail-desktop.sh # installs to /opt
 # apps/retroarch.sh
 # apps/samba.sh
@@ -78,13 +76,11 @@ find . -name "*.sh" -exec chmod +x {} \;
 
 # development tools
 # apps/git.sh
-# apps/gitkraken.sh
 # apps/vscodium.sh # installs to /opt
 # apps/allegro.sh
 # apps/arduino.sh
 # apps/eclipse.sh
 # apps/android-studio.sh # installs to /opt
-# apps/pycharm-community.sh # installs to /opt
 # apps/postgresql.sh
 # apps/nodejs.sh
 # apps/mysql-workbench.sh
