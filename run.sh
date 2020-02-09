@@ -55,7 +55,7 @@ find . -name "*.sh" -exec chmod +x {} \;
 # general apps
 # apps/syncthing.sh
 # apps/firefox.sh
-# apps/google-chrome.sh
+# apps/chromium.sh
 # apps/clementine.sh
 # apps/libreoffice.sh
 # apps/vlc.sh
