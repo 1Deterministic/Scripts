@@ -60,7 +60,6 @@ find . -name "*.sh" -exec chmod +x {} \;
 # apps/qbittorrent.sh
 # apps/gimp.sh
 # apps/kdenlive.sh
-# apps/minitube.sh
 # apps/steam.sh
 # apps/lutris.sh
 # apps/freetube.sh
