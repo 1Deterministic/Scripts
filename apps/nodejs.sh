@@ -6,8 +6,7 @@ if [[ $osname == $archlinux ]]; then
 fi
 
 if [[ $osname == $debian ]]; then
-    sudo apt install nodejs -y
-    sudo apt install npm -y
+    sudo apt install nodejs npm -y
 fi
 
 if [[ $osname == $fedora ]]; then

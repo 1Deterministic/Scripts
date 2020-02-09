@@ -2,15 +2,13 @@
 source config.sh
 
 if [[ $osname == $archlinux ]]; then
-    sudo pacman -S plasma-meta kdebase kde-gtk-config networkmanager print-manager cups haveged packagekit-qt5 --noconfirm
+    sudo pacman -S plasma-meta kdebase kde-gtk-config networkmanager print-manager cups haveged packagekit-qt5 xdg-user-dirs --noconfirm
     sudo systemctl enable haveged NetworkManager sddm org.cups.cupsd.service
-    sudo pacman -S xdg-user-dirs --noconfirm
 fi
 
 if [[ $osname == $debian ]]; then
-    sudo apt install kde-plasma-desktop sddm-theme-debian-breeze -y
+    sudo apt install kde-plasma-desktop sddm-theme-debian-breeze plasma-nm -y
     sudo systemctl enable sddm
-    sudo apt install plasma-nm -y
     sudo systemctl enable wpa_supplicant.service
     sudo bash -c "cat strings/config-networkmanager-managed > /etc/NetworkManager/NetworkManager.conf"
     # as NetworkManager will be used, this will disable the default network handler
@@ -24,7 +22,6 @@ if [[ $osname == $fedora ]]; then
     sudo systemctl enable sddm
     sudo systemctl set-default graphical.target
     sudo dracut -f
-    sudo dnf remove qt5-qdbusviewer -y
 fi
 
 if [[ $osname == $ubuntu ]]; then

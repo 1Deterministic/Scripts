@@ -5,7 +5,7 @@ if [[ $osname == $archlinux ]]; then
     sudo bash -c "cat strings/config-arch-repo >> /etc/pacman.conf"
     sudo pacman -Syyu
 
-    sudo pacman -S git unzip wget fuse python-pip --noconfirm
+    sudo pacman -S git wget --noconfirm
 
     sudo pacman -S ufw --noconfirm
     sudo ufw enable
@@ -22,7 +22,7 @@ if [[ $osname == $debian ]]; then
     sudo apt update
     sudo apt dist-upgrade -y
 
-    sudo apt install git unzip wget fuse python3-pip -y
+    sudo apt install git wget -y
 
     sudo apt install ufw -y
     sudo ufw enable
@@ -40,13 +40,11 @@ if [[ $osname == $fedora ]]; then
     sudo dnf install $link_rpmfusionfree -y
     sudo dnf install $link_rpmfusionnonfree -y
 
-    sudo dnf install gcc git unzip wget fuse python-pip -y
+    sudo dnf install gcc git wget -y
 fi
 
 if [[ $osname == $ubuntu ]]; then
-    sudo apt install tasksel -y
-
-    sudo apt install git unzip wget fuse python3-pip -y
+    sudo apt install git wget tasksel -y
 
     sudo apt install ufw -y
     sudo ufw enable

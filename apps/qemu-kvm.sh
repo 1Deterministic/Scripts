@@ -2,30 +2,17 @@
 source config.sh
 
 if [[ $osname == $archlinux ]]; then
-    sudo pacman -S qemu --noconfirm
-    sudo pacman -S libvirt --noconfirm
-    sudo pacman -S openbsd-netcat --noconfirm
-    sudo pacman -S dmidecode --noconfirm
-    sudo pacman -S virt-manager --noconfirm
-    sudo systemctl enable libvirtd
+    sudo pacman -S qemu libvirt openbsd-netcat dmidecode virt-manager ebtables dnsmasq perl-sys-virt ovmf multipath-tools--noconfirm
     sudo usermod -aG libvirt $username
     sudo usermod -aG kvm $username
-    sudo pacman -S ebtables --noconfirm
+    sudo systemctl enable libvirtd
     sudo systemctl enable ebtables
-    sudo pacman -S dnsmasq --noconfirm
     sudo systemctl enable dnsmasq
-    sudo pacman -S perl-sys-virt --noconfirm
-    sudo pacman -S ovmf --noconfirm
     sudo bash -c "cat strings/config-ovmf-nvram >> /etc/libvirt/qemu.conf"
-    sudo pacman -S multipath-tools --noconfirm
 fi
 
 if [[ $osname == $debian ]]; then
-    sudo apt install qemu-kvm -y
-    sudo apt install libvirt-clients -y
-    sudo apt install libvirt-daemon-system -y
-    sudo apt install virt-manager -y
-    sudo apt install libguestfs-tools -y
+    sudo apt install qemu-kvm libvirt-clients libvirt-daemon-system virt-manager libguestfs-tools -y
     sudo adduser $username libvirt
     sudo adduser $username libvirt-qemu
 fi

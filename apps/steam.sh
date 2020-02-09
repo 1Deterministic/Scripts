@@ -2,13 +2,11 @@
 source config.sh
 
 if [[ $osname == $archlinux ]]; then
-    sudo pacman -S steam --noconfirm
-    sudo pacman -S steam-native-runtime --noconfirm
+    sudo pacman -S steam steam-native-runtime --noconfirm
 fi
 
 if [[ $osname == $debian ]]; then
-    sudo apt install steam -y
-    sudo apt install libcurl4
+    sudo apt install steam libcurl4 -y
     sudo ln -s /usr/lib/x86_64-linux-gnu/libcurl.so.4 /usr/lib/x86_64-linux-gnu/libcurl.so
 fi
 
@@ -17,6 +15,5 @@ if [[ $osname == $fedora ]]; then
 fi
 
 if [[ $osname == $ubuntu ]]; then
-    sudo apt install steam -y
-    sudo apt install xboxdrv -y
+    sudo apt install steam xboxdrv -y
 fi

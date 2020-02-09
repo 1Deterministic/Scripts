@@ -2,10 +2,9 @@
 source config.sh
 
 if [[ $osname == $archlinux ]]; then
-    sudo pacman -S arduino --noconfirm
-    sudo pacman -S arduino-avr-core --noconfirm
-    sudo usermod -aG uucp
-    sudo usermod -aG lock
+    sudo pacman -S arduino arduino-avr-core --noconfirm
+    sudo usermod -aG uucp $username
+    sudo usermod -aG lock $username
 fi
 
 if [[ $osname == $debian ]]; then

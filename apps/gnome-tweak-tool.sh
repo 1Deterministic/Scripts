@@ -2,11 +2,11 @@
 source config.sh
 
 if [[ $osname == $archlinux ]]; then
-    $missing
+    sudo pacman -S gnome-tweak-tool --noconfirm
 fi
 
 if [[ $osname == $debian ]]; then
-    $missing
+    sudo apt install gnome-tweak-tool -y
 fi
 
 if [[ $osname == $fedora ]]; then
@@ -14,5 +14,5 @@ if [[ $osname == $fedora ]]; then
 fi
 
 if [[ $osname == $ubuntu ]]; then
-    $missing
+    sudo apt install gnome-tweak-tool -y
 fi

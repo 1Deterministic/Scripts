@@ -2,15 +2,7 @@
 source config.sh
 
 if [[ $osname == $archlinux ]]; then
-    sudo pacman -S xorg-server --noconfirm
-    sudo pacman -S xfce4 --noconfirm
-    sudo pacman -S xdg-user-dirs --noconfirm
-    sudo pacman -S lightdm --noconfirm
-    sudo pacman -S lightdm-gtk-greeter --noconfirm
-    sudo pacman -S networkmanager --noconfirm
-    sudo pacman -S pulseaudio --noconfirm
-    sudo pacman -S pavucontrol --noconfirm
-    sudo pacman -S file-roller --noconfirm
+    sudo pacman -S xorg-server xfce4 xdg-user-dirs lightdm lightdm-gtk-greeter networkmanager pulseaudio pavucontrol file-roller --noconfirm
     sudo systemctl enable lightdm.service
     sudo systemctl enable NetworkManager.service
 fi

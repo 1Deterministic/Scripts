@@ -2,15 +2,13 @@
 source config.sh
 
 if [[ $osname == $archlinux ]]; then
-    sudo pacman -S gnome --noconfirm
-    sudo pacman -S gnome-software-packagekit-plugin --noconfirm
+    sudo pacman -S gnome gnome-software-packagekit-plugin --noconfirm
     sudo systemctl enable gdm.service
     sudo systemctl enable NetworkManager.service
 fi
 
 if [[ $osname == $debian ]]; then
-    sudo apt install gnome-core -y
-    sudo apt install nautilus -y
+    sudo apt install gnome-core nautilus -y
     sudo systemctl enable wpa_supplicant.service
     sudo bash -c "cat strings/config-networkmanager-managed > /etc/NetworkManager/NetworkManager.conf"
     # as NetworkManager will be used, this will disable the default network handler
