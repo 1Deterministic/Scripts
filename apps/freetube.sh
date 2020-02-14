@@ -9,6 +9,8 @@ if [[ $osname == $archlinux ]]; then
     sudo tar xf /tmp/freetube/freetube.tar.xz --directory /opt
     sudo bash -c "cat strings/launcher-freetube > /usr/share/applications/freetube.desktop"
     rm -r /tmp/freetube
+    sudo chown root:root -R /opt/FreeTube-0.7.2/chrome-sandbox
+    sudo chmod 4755 /opt/FreeTube-0.7.2/chrome-sandbox
 fi
 
 if [[ $osname == $debian ]]; then
@@ -17,6 +19,8 @@ if [[ $osname == $debian ]]; then
     sudo tar xf /tmp/freetube/freetube.tar.xz --directory /opt
     sudo bash -c "cat strings/launcher-freetube > /usr/share/applications/freetube.desktop"
     rm -r /tmp/freetube
+    sudo chown root:root -R /opt/FreeTube-0.7.2/chrome-sandbox
+    sudo chmod 4755 /opt/FreeTube-0.7.2/chrome-sandbox
 fi
 
 if [[ $osname == $fedora ]]; then
@@ -25,6 +29,8 @@ if [[ $osname == $fedora ]]; then
     sudo tar xf /tmp/freetube/freetube.tar.xz --directory /opt
     sudo bash -c "cat strings/launcher-freetube > /usr/share/applications/freetube.desktop"
     rm -r /tmp/freetube
+    sudo chown root:root -R /opt/FreeTube-0.7.2/chrome-sandbox
+    sudo chmod 4755 /opt/FreeTube-0.7.2/chrome-sandbox
 fi
 
 if [[ $osname == $ubuntu ]]; then
@@ -33,4 +39,6 @@ if [[ $osname == $ubuntu ]]; then
     sudo tar xf /tmp/freetube/freetube.tar.xz --directory /opt
     sudo bash -c "cat strings/launcher-freetube > /usr/share/applications/freetube.desktop"
     rm -r /tmp/freetube
+    sudo chown root:root -R /opt/FreeTube-0.7.2/chrome-sandbox
+    sudo chmod 4755 /opt/FreeTube-0.7.2/chrome-sandbox
 fi
