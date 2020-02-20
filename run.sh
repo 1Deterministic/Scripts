@@ -51,6 +51,7 @@ find . -name "*.sh" -exec chmod +x {} \;
 
 # basic apps for xfce
 # apps/xfce-goodies.sh
+# apps/ristretto.sh
 
 # general apps
 # apps/syncthing.sh
