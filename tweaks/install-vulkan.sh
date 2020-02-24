@@ -10,7 +10,7 @@ if [[ $osname == $debian ]]; then
 fi
 
 if [[ $osname == $fedora ]]; then
-    $missing
+    sudo dnf install mesa-vulkan-drivers mesa-vulkan-drivers.i686 vulkan-loader vulkan-loader.i686 vulkan-validation-layers vulkan-validation-layers.i686 -y
 fi
 
 if [[ $osname == $ubuntu ]]; then
