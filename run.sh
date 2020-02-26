@@ -29,6 +29,7 @@ find . -name "*.sh" -exec chmod +x {} \;
 # tweaks/fix-qt-looks-on-gtk-based-desktop-environments.sh # requires manually configuring the theme in kvantummanager and kvantum style, icon theme and fonts in qt5ct
 # tweaks/install-vulkan.sh
 # tweaks/install-extra-python-modules.sh
+# tweaks/install-proton-ge.sh # you must install and run steam at least once before installing this
 
 # basic apps for kde
 # apps/ark.sh
