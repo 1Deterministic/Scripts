@@ -2,7 +2,7 @@
 source config.sh
 
 if [[ $osname == $archlinux ]]; then
-    $missing
+    sudo pacman -S libretro --noconfirm
 fi
 
 if [[ $osname == $debian ]]; then
