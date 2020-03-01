@@ -91,3 +91,4 @@ find . -name "*.sh" -exec chmod +x {} \;
 # apps/php.sh
 # apps/mariadb.sh
 # apps/apache-tomcat.sh # installs to /opt
+# apps/vulkan-sdk.sh
