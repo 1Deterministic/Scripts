@@ -31,6 +31,7 @@ find . -name "*.sh" -exec chmod +x {} \;
 # tweaks/install-extra-python-modules.sh
 # tweaks/install-proton-ge.sh # you must install and run steam at least once before installing this
 # tweaks/enable-valve-aco.sh
+# tweals/fix-vlc-youtube-links.sh
 
 # basic apps for kde
 # apps/ark.sh
