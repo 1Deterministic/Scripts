@@ -11,6 +11,7 @@ fi
 
 if [[ $osname == $fedora ]]; then
     sudo dnf install kdenlive frei0r-plugins -y
+    sudo rpm -e --nodeps Lmod
 fi
 
 if [[ $osname == $ubuntu ]]; then
