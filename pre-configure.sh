@@ -40,7 +40,8 @@ if [[ $osname == $fedora ]]; then
     sudo dnf install $link_rpmfusionfree -y
     sudo dnf install $link_rpmfusionnonfree -y
 
-    sudo dnf install gcc git wget -y
+    sudo dnf install gcc git wget linux-firmware microcode_ctl -y
+    sudo dracut -f
 fi
 
 if [[ $osname == $ubuntu ]]; then
