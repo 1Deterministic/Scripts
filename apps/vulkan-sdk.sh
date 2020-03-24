@@ -9,10 +9,10 @@ if basedOn "$osname" "$linux"; then
     wget "$link_vulkan_sdk" -O "/tmp/vulkan-sdk/vulkan-sdk.tar.gz"
     tar xvzf "/tmp/vulkan-sdk/vulkan-sdk.tar.gz" --directory "/tmp/vulkan-sdk"
     sudo cp -r "/tmp/vulkan-sdk/1.2.131.2/x86_64/include/vulkan" "/usr/local/include"
-    sudo cp -P "/tmp/vulkan-sdk/1.2.131.2/x86_64/lib/libvulkan.so*" "/usr/local/lib"
-    sudo cp "/tmp/vulkan-sdk/1.2.131.2/x86_64/lib/libVkLayer_*.so" "/usr/local/lib"
+    sudo cp -P "/tmp/vulkan-sdk/1.2.131.2/x86_64/lib/libvulkan.so"* "/usr/local/lib"
+    sudo cp "/tmp/vulkan-sdk/1.2.131.2/x86_64/lib/libVkLayer_"*".so" "/usr/local/lib"
     sudo mkdir -p "/usr/local/share/vulkan/explicit_layer.d"
-    sudo cp "/tmp/vulkan-sdk/1.2.131.2/x86_64/etc/vulkan/explicit_layer.d/VkLayer_*.json" "/usr/local/share/vulkan/explicit_layer.d"
+    sudo cp "/tmp/vulkan-sdk/1.2.131.2/x86_64/etc/vulkan/explicit_layer.d/VkLayer_"*".json" "/usr/local/share/vulkan/explicit_layer.d"
     rm -r "/tmp/vulkan-sdk"
     sudo ldconfig
     # common to arch-based distros
