@@ -1,23 +1,49 @@
 #!/bin/bash
 source config.sh
 
-if [[ $osname == $archlinux ]]; then
-    sudo pacman -S xorg-server xfce4 xdg-user-dirs lightdm lightdm-gtk-greeter networkmanager pulseaudio pavucontrol file-roller --noconfirm
-    sudo systemctl enable lightdm.service
-    sudo systemctl enable NetworkManager.service
-fi
-
-if [[ $osname == $debian ]]; then
-    sudo tasksel install xfce-desktop
-fi
-
-if [[ $osname == $fedora ]]; then
-    sudo dnf install @xfce-desktop-environment -y
-    sudo systemctl enable lightdm
-    sudo systemctl set-default graphical.target
-    sudo dracut -f
-fi
-
-if [[ $osname == $ubuntu ]]; then
-    $missing
+# common to all linux distros
+if basedOn "$osname" "$linux"; then
+    # code that has to be executed before downstream-specific distros
+    # common to arch-based distros
+    if basedOn "$osname" "$archlinux"; then
+        # code that has to be executed before downstream-specific distros
+        sudo pacman -S xorg-server xfce4 xdg-user-dirs lightdm lightdm-gtk-greeter networkmanager pulseaudio pavucontrol file-roller --noconfirm
+        sudo systemctl enable lightdm.service
+        sudo systemctl enable NetworkManager.service
+        # arch linux-specific
+        if [[ "$osname" == "$archlinux" ]]; then
+            :
+        fi
+        # code that has to be executed after downstream-specific distros
+    # common to debian-based distros
+    elif basedOn "$osname" "$debian"; then
+        # code that has to be executed before downstream-specific distros
+        sudo tasksel install xfce-desktop
+        # debian-specific
+        if [[ "$osname" == "$debian" ]]; then
+            :
+        # common to ubuntu-based distros
+        elif basedOn "$osname" "$ubuntu"; then
+            # code that has to be executed before downstream-specific distros
+            # ubuntu-specific
+            if [[ "$osname" == "$ubuntu" ]]; then
+                :
+            fi
+            # code that has to be executed after downstream-specific distros
+        fi
+        # code that has to be executed after downstream-specific distros
+    # common to fedora-based distros
+    elif basedOn "$osname" "$fedora"; then
+        # code that has to be executed before downstream-specific distros
+        sudo dnf install @xfce-desktop-environment -y
+        sudo systemctl enable lightdm
+        sudo systemctl set-default graphical.target
+        sudo dracut -f
+        # fedora-specific
+        if [[ "$osname" == "$fedora" ]]; then
+            :
+        fi
+        # code that has to be executed after downstream-specific distros
+    fi
+    # code that has to be executed after downstream-specific distros
 fi

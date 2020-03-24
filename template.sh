@@ -7,7 +7,6 @@ if basedOn "$osname" "$linux"; then
     # common to arch-based distros
     if basedOn "$osname" "$archlinux"; then
         # code that has to be executed before downstream-specific distros
-        sudo pacman -S vlc --noconfirm
         # arch linux-specific
         if [[ "$osname" == "$archlinux" ]]; then
             :
@@ -16,7 +15,6 @@ if basedOn "$osname" "$linux"; then
     # common to debian-based distros
     elif basedOn "$osname" "$debian"; then
         # code that has to be executed before downstream-specific distros
-        sudo apt install vlc -y
         # debian-specific
         if [[ "$osname" == "$debian" ]]; then
             :
@@ -33,7 +31,6 @@ if basedOn "$osname" "$linux"; then
     # common to fedora-based distros
     elif basedOn "$osname" "$fedora"; then
         # code that has to be executed before downstream-specific distros
-        sudo dnf install vlc -y
         # fedora-specific
         if [[ "$osname" == "$fedora" ]]; then
             :
