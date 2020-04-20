@@ -7,9 +7,16 @@ if basedOn "$osname" "$linux"; then
     # common to arch-based distros
     if basedOn "$osname" "$archlinux"; then
         # code that has to be executed before downstream-specific distros
-        sudo pacman -S xorg-server xfce4 xdg-user-dirs lightdm lightdm-gtk-greeter networkmanager pulseaudio pavucontrol file-roller --noconfirm
-        sudo systemctl enable lightdm NetworkManager
-        sudo systemctl set-default graphical.target
+        sudo pacman -S xorg-server bspwm sxhkd xdg-user-dirs pulseaudio networkmanager --noconfirm
+        sudo systemctl enable NetworkManager
+        # to use lightdm uncomment these lines
+        # sudo pacman -S lightdm lightdm-gtk-greeter --noconfirm
+        # sudo systemctl enable lightdm
+        mkdir "/home/$username/.config"
+        mkdir "/home/$username/.config/bspwm"
+        cp "/usr/share/doc/bspwm/examples/bspwmrc" "/home/$username/.config/bspwm"
+        mkdir "/home/$username/.config/sxhkd"
+        cp "/usr/share/doc/bspwm/examples/sxhkdrc" "/home/$username/.config/sxhkd"
         # arch linux-specific
         if [[ "$osname" == "$archlinux" ]]; then
             :
@@ -18,7 +25,6 @@ if basedOn "$osname" "$linux"; then
     # common to debian-based distros
     elif basedOn "$osname" "$debian"; then
         # code that has to be executed before downstream-specific distros
-        sudo tasksel install xfce-desktop
         # debian-specific
         if [[ "$osname" == "$debian" ]]; then
             :
@@ -35,10 +41,18 @@ if basedOn "$osname" "$linux"; then
     # common to fedora-based distros
     elif basedOn "$osname" "$fedora"; then
         # code that has to be executed before downstream-specific distros
-        sudo dnf install @xfce-desktop-environment -y
-        sudo systemctl enable lightdm
-        sudo systemctl set-default graphical.target
-        sudo dracut -f
+        sudo dnf install @"base-x" @"Common NetworkManager Submodules" @"Fonts" @"Hardware Support" xorg-x11-drv-libinput @"Printing Support" @"Input Methods" @Multimedia bspwm sxhkd xdg-user-dirs pulseaudio NetworkManager -y
+        sudo systemctl enable NetworkManager
+        # to use lightdm uncomment these lines
+        # sudo pacman -S lightdm lightdm-gtk-greeter --noconfirm
+        # sudo systemctl enable lightdm
+        # sudo systemctl set-default graphical.target
+        # sudo dracut -f
+        mkdir "/home/$username/.config"
+        mkdir "/home/$username/.config/bspwm"
+        cp "/usr/share/doc/bspwm/examples/bspwmrc" "/home/$username/.config/bspwm"
+        mkdir "/home/$username/.config/sxhkd"
+        cp "/usr/share/doc/bspwm/examples/sxhkdrc" "/home/$username/.config/sxhkd"
         # fedora-specific
         if [[ "$osname" == "$fedora" ]]; then
             :

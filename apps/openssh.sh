@@ -48,4 +48,6 @@ if basedOn "$osname" "$linux"; then
         # code that has to be executed after downstream-specific distros
     fi
     # code that has to be executed after downstream-specific distros
+    sed -i "s,#PermitRootLogin prohibit-password,PermitRootLogin no," "/etc/ssh/sshd_config"
+    sed -i "s,#PasswordAuthentication yes,PasswordAuthentication no," "/etc/ssh/sshd_config"
 fi

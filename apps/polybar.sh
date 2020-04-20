@@ -7,9 +7,6 @@ if basedOn "$osname" "$linux"; then
     # common to arch-based distros
     if basedOn "$osname" "$archlinux"; then
         # code that has to be executed before downstream-specific distros
-        sudo pacman -S xorg-server xfce4 xdg-user-dirs lightdm lightdm-gtk-greeter networkmanager pulseaudio pavucontrol file-roller --noconfirm
-        sudo systemctl enable lightdm NetworkManager
-        sudo systemctl set-default graphical.target
         # arch linux-specific
         if [[ "$osname" == "$archlinux" ]]; then
             :
@@ -18,7 +15,6 @@ if basedOn "$osname" "$linux"; then
     # common to debian-based distros
     elif basedOn "$osname" "$debian"; then
         # code that has to be executed before downstream-specific distros
-        sudo tasksel install xfce-desktop
         # debian-specific
         if [[ "$osname" == "$debian" ]]; then
             :
@@ -35,10 +31,10 @@ if basedOn "$osname" "$linux"; then
     # common to fedora-based distros
     elif basedOn "$osname" "$fedora"; then
         # code that has to be executed before downstream-specific distros
-        sudo dnf install @xfce-desktop-environment -y
-        sudo systemctl enable lightdm
-        sudo systemctl set-default graphical.target
-        sudo dracut -f
+        sudo dnf install polybar -y
+        mkdir "/home/$username/.config/polybar"
+        cp "/usr/share/doc/polybar/config" "/home/$username/.config/polybar/config"
+        # you will have to remove the i3 module from the polybar config file if using the example bar
         # fedora-specific
         if [[ "$osname" == "$fedora" ]]; then
             :

@@ -17,6 +17,9 @@ find . -name "*.sh" -exec chmod +x {} \;
 # apps/gnome-shell.sh
 # apps/xfce.sh
 
+# window managers
+# apps/bspwm.sh
+
 # general system tweaks
 # tweaks/remove-kde-bloat.sh
 # tweaks/remove-gnome-bloat.sh
@@ -54,7 +57,18 @@ find . -name "*.sh" -exec chmod +x {} \;
 
 # basic apps for xfce
 # apps/xfce-goodies.sh
+# apps/thunar.sh
 # apps/ristretto.sh
+# apps/pavucontrol.sh
+
+# basic apps for window managers in general
+# apps/urxvt.sh
+# apps/feh.sh
+# apps/dmenu.sh
+# apps/compton.sh
+# apps/lxappearance.sh # not a wm app but it's only used here at the moment
+# apps/polybar.sh
+# apps/dunst.sh
 
 # general apps
 # apps/syncthing.sh

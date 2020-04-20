@@ -8,7 +8,8 @@ if basedOn "$osname" "$linux"; then
     if basedOn "$osname" "$archlinux"; then
         # code that has to be executed before downstream-specific distros
         sudo pacman -S plasma-meta kdebase kde-gtk-config networkmanager print-manager cups haveged packagekit-qt5 xdg-user-dirs --noconfirm
-        sudo systemctl enable haveged NetworkManager sddm org.cups.cupsd.service
+        sudo systemctl enable haveged NetworkManager sddm org.cups.cupsd
+        sudo systemctl set-default graphical.target
         # arch linux-specific
         if [[ "$osname" == "$archlinux" ]]; then
             :
@@ -20,8 +21,8 @@ if basedOn "$osname" "$linux"; then
         # debian-specific
         if [[ "$osname" == "$debian" ]]; then
             sudo apt install kde-plasma-desktop sddm-theme-debian-breeze plasma-nm -y
-            sudo systemctl enable sddm
-            sudo systemctl enable wpa_supplicant.service
+            sudo systemctl enable sddm wpa_supplicant
+            sudo systemctl set-default graphical.target
             sudo bash -c "cat strings/config-networkmanager-managed > /etc/NetworkManager/NetworkManager.conf"
             # as NetworkManager will be used, this will disable the default network handler
             sudo awk -i inplace '$0~/^allow-hotplug|^iface|^[" "]*address|^[" "]*netmask|^[" "]*gateway/{$0="# "$0};1' "/etc/network/interfaces"

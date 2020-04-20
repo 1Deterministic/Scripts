@@ -8,8 +8,7 @@ if basedOn "$osname" "$linux"; then
     if basedOn "$osname" "$archlinux"; then
         # code that has to be executed before downstream-specific distros
         sudo pacman -S gnome gnome-software-packagekit-plugin --noconfirm
-        sudo systemctl enable gdm.service
-        sudo systemctl enable NetworkManager.service
+        sudo systemctl enable gdm NetworkManager
         # arch linux-specific
         if [[ "$osname" == "$archlinux" ]]; then
             :
@@ -21,7 +20,8 @@ if basedOn "$osname" "$linux"; then
         # debian-specific
         if [[ "$osname" == "$debian" ]]; then
             sudo apt install gnome-core nautilus -y
-            sudo systemctl enable wpa_supplicant.service
+            sudo systemctl enable gdm wpa_supplicant
+            sudo systemctl set-default graphical.target
             sudo bash -c "cat strings/config-networkmanager-managed > /etc/NetworkManager/NetworkManager.conf"
             # as NetworkManager will be used, this will disable the default network handler
             sudo awk -i inplace '$0~/^allow-hotplug|^iface|^[" "]*address|^[" "]*netmask|^[" "]*gateway/{$0="# "$0};1' "/etc/network/interfaces"
