@@ -4,6 +4,14 @@ source config.sh
 # common to all linux distros
 if basedOn "$osname" "$linux"; then
     # code that has to be executed before downstream-specific distros
+    link_vscodium="https://github.com/VSCodium/vscodium/releases/download/1.39.0/VSCodium-linux-x64-1.39.0.tar.gz"
+    mkdir "/tmp/vscodium"
+    wget "$link_vscodium" -O "/tmp/vscodium/vscodium.tar.gz"
+    sudo mkdir "/opt/vscodium"
+    sudo tar xvzf "/tmp/vscodium/vscodium.tar.gz" --directory "/opt/vscodium"
+    sudo chmod +x "/opt/vscodium/codium"
+    rm -r "/tmp/vscodium"
+    sudo bash -c "cat strings/launcher-vscodium > /usr/share/applications/vscodium.desktop"
     # common to arch-based distros
     if basedOn "$osname" "$archlinux"; then
         # code that has to be executed before downstream-specific distros
@@ -38,12 +46,4 @@ if basedOn "$osname" "$linux"; then
         # code that has to be executed after downstream-specific distros
     fi
     # code that has to be executed after downstream-specific distros
-    link_vscodium="https://github.com/VSCodium/vscodium/releases/download/1.39.0/VSCodium-linux-x64-1.39.0.tar.gz"
-    mkdir "/tmp/vscodium"
-    wget "$link_vscodium" -O "/tmp/vscodium/vscodium.tar.gz"
-    sudo mkdir "/opt/vscodium"
-    sudo tar xvzf "/tmp/vscodium/vscodium.tar.gz" --directory "/opt/vscodium"
-    sudo chmod +x "/opt/vscodium/codium"
-    rm -r "/tmp/vscodium"
-    sudo bash -c "cat strings/launcher-vscodium > /usr/share/applications/vscodium.desktop"
 fi

@@ -16,23 +16,25 @@ if basedOn "$osname" "$linux"; then
     # common to debian-based distros
     elif basedOn "$osname" "$debian"; then
         # code that has to be executed before downstream-specific distros
+        mkdir "/tmp/mysql-workbench"
         # debian-specific
         if [[ "$osname" == "$debian" ]]; then
             link_mysql_workbench_deb="https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community_8.0.19-1ubuntu18.04_amd64.deb"
-            mkdir "/tmp/mysql-workbench"
             wget "$link_mysql_workbench_deb" -O "/tmp/mysql-workbench/mysql-workbench.deb"
-            sudo apt install "/tmp/mysql-workbench/mysql-workbench.deb" -y
-            rm -r "/tmp/mysql-workbench"
         # common to ubuntu-based distros
         elif basedOn "$osname" "$ubuntu"; then
             # code that has to be executed before downstream-specific distros
+            link_mysql_workbench_deb="https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community_8.0.19-1ubuntu19.10_amd64.deb"
+            wget "$link_mysql_workbench_deb" -O "/tmp/mysql-workbench/mysql-workbench.deb"
             # ubuntu-specific
             if [[ "$osname" == "$ubuntu" ]]; then
-                sudo apt install mysql-workbench -y
+                :
             fi
             # code that has to be executed after downstream-specific distros
         fi
         # code that has to be executed after downstream-specific distros
+        sudo apt install "/tmp/mysql-workbench/mysql-workbench.deb" -y
+        rm -r "/tmp/mysql-workbench"
     # common to fedora-based distros
     elif basedOn "$osname" "$fedora"; then
         # code that has to be executed before downstream-specific distros

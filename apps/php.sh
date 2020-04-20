@@ -15,13 +15,13 @@ if basedOn "$osname" "$linux"; then
     # common to debian-based distros
     elif basedOn "$osname" "$debian"; then
         # code that has to be executed before downstream-specific distros
-        sudo apt install php7.3 php7.3-mysql -y
         # debian-specific
         if [[ "$osname" == "$debian" ]]; then
-            :
+            sudo apt install php7.3 php7.3-mysql -y
         # common to ubuntu-based distros
         elif basedOn "$osname" "$ubuntu"; then
             # code that has to be executed before downstream-specific distros
+            sudo apt install php7.4 php7.4-mysql -y
             # ubuntu-specific
             if [[ "$osname" == "$ubuntu" ]]; then
                 :

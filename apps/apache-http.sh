@@ -21,6 +21,7 @@ if basedOn "$osname" "$linux"; then
         # common to ubuntu-based distros
         elif basedOn "$osname" "$ubuntu"; then
             # code that has to be executed before downstream-specific distros
+            sudo apt install apache2 libapache2-mod-php7.4 -y
             # ubuntu-specific
             if [[ "$osname" == "$ubuntu" ]]; then
                 :
