@@ -58,6 +58,7 @@ if basedOn "$osname" "$linux"; then
             sudo dnf install "$link_rpmfusionfree" "$link_rpmfusionnonfree" -y
         fi
         # code that has to be executed after downstream-specific distros
+        sudo dnf update -y
     fi
     # code that has to be executed after downstream-specific distros
 fi

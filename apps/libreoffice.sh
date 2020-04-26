@@ -36,7 +36,7 @@ if basedOn "$osname" "$linux"; then
         sudo dnf install libreoffice -y
         # fedora-specific
         if [[ "$osname" == "$fedora" ]]; then
-            sudo rm "/usr/share/applications/java-"*"-policytool.desktop"
+            :
         fi
         # code that has to be executed after downstream-specific distros
     fi

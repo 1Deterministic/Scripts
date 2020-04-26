@@ -4,7 +4,7 @@
 linux="Linux"
 archlinux="Arch Linux"
 debian="Debian GNU/Linux 10 (buster)"
-fedora="Fedora 31 (Thirty One)"
+fedora="Fedora 32 (Thirty Two)"
 ubuntu="Ubuntu 20.04 LTS"
 
 # prints the OS the installed system is based on (recursively)
