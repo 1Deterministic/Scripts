@@ -4,10 +4,10 @@ source config.sh
 # common to all linux distros
 if basedOn "$osname" "$linux"; then
     # code that has to be executed before downstream-specific distros
-        sudo pacman -S chromium --noconfirm
     # common to arch-based distros
     if basedOn "$osname" "$archlinux"; then
         # code that has to be executed before downstream-specific distros
+        sudo pacman -S chromium --noconfirm
         # arch linux-specific
         if [[ "$osname" == "$archlinux" ]]; then
             :
