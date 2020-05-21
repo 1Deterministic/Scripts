@@ -1,6 +1,8 @@
 #!/bin/bash
 source config.sh
 
+link_freetube="https://github.com/FreeTubeApp/FreeTube/releases/download/v0.7.2-beta/FreeTube-0.7.2-linux.tar.xz"
+
 # common to all linux distros
 if basedOn "$osname" "$linux"; then
     # code that has to be executed before downstream-specific distros
@@ -38,7 +40,6 @@ if basedOn "$osname" "$linux"; then
         # code that has to be executed after downstream-specific distros
     fi
     # code that has to be executed after downstream-specific distros
-    link_freetube="https://github.com/FreeTubeApp/FreeTube/releases/download/v0.7.2-beta/FreeTube-0.7.2-linux.tar.xz"
     mkdir "/tmp/freetube"
     wget "$link_freetube" -O "/tmp/freetube/freetube.tar.xz"
     sudo tar xf "/tmp/freetube/freetube.tar.xz" --directory "/opt"

@@ -1,6 +1,9 @@
 #!/bin/bash
 source config.sh
 
+link_protonmail_desktop="https://github.com/protonmail-desktop/application/releases/download/1.0.4/protonmail-desktop-unofficial-1.0.4.tar.gz"
+link_protonmail_desktop_icon="https://raw.githubusercontent.com/protonmail-desktop/application/master/src/main/images/Icon.png"
+
 # common to all linux distros
 if basedOn "$osname" "$linux"; then
     # code that has to be executed before downstream-specific distros
@@ -38,8 +41,6 @@ if basedOn "$osname" "$linux"; then
         # code that has to be executed after downstream-specific distros
     fi
     # code that has to be executed after downstream-specific distros
-    link_protonmail_desktop="https://github.com/protonmail-desktop/application/releases/download/1.0.4/protonmail-desktop-unofficial-1.0.4.tar.gz"
-    link_protonmail_desktop_icon="https://raw.githubusercontent.com/protonmail-desktop/application/master/src/main/images/Icon.png"
     mkdir "/tmp/protonmail"
     wget "$link_protonmail_desktop_icon" -O "/tmp/protonmail/icon.png"
     wget "$link_protonmail_desktop" -O "/tmp/protonmail/protonmail.tar.gz"

@@ -4,7 +4,6 @@ source config.sh
 # common to all linux distros
 if basedOn "$osname" "$linux"; then
     # code that has to be executed before downstream-specific distros
-    sudo bash -c "cat strings/config-aco >> /etc/environment"
     # common to arch-based distros
     if basedOn "$osname" "$archlinux"; then
         # code that has to be executed before downstream-specific distros
@@ -39,4 +38,5 @@ if basedOn "$osname" "$linux"; then
         # code that has to be executed after downstream-specific distros
     fi
     # code that has to be executed after downstream-specific distros
+    sudo bash -c "cat strings/config-aco >> /etc/environment"
 fi

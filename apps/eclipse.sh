@@ -1,6 +1,8 @@
 #!/bin/bash
 source config.sh
 
+link_eclipse="http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/photon/R/eclipse-java-photon-R-linux-gtk-x86_64.tar.gz"
+
 # common to all linux distros
 if basedOn "$osname" "$linux"; then
     # code that has to be executed before downstream-specific distros
@@ -40,7 +42,6 @@ if basedOn "$osname" "$linux"; then
         # code that has to be executed after downstream-specific distros
     fi
     # code that has to be executed after downstream-specific distros
-    link_eclipse="http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/photon/R/eclipse-java-photon-R-linux-gtk-x86_64.tar.gz"
     mkdir "/tmp/eclipse"
     wget "$link_eclipse" -O "/tmp/eclipse/eclipse.tar.gz"
     sudo tar -zxvf "/tmp/eclipse/eclipse.tar.gz" -C "/usr/"

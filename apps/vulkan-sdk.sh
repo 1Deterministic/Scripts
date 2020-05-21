@@ -1,20 +1,11 @@
 #!/bin/bash
 source config.sh
 
+link_vulkan_sdk="https://sdk.lunarg.com/sdk/download/1.2.131.2/linux/vulkansdk-linux-x86_64-1.2.131.2.tar.gz?u="
+
 # common to all linux distros
 if basedOn "$osname" "$linux"; then
     # code that has to be executed before downstream-specific distros
-    link_vulkan_sdk="https://sdk.lunarg.com/sdk/download/1.2.131.2/linux/vulkansdk-linux-x86_64-1.2.131.2.tar.gz?u="
-    mkdir "/tmp/vulkan-sdk"
-    wget "$link_vulkan_sdk" -O "/tmp/vulkan-sdk/vulkan-sdk.tar.gz"
-    tar xvzf "/tmp/vulkan-sdk/vulkan-sdk.tar.gz" --directory "/tmp/vulkan-sdk"
-    sudo cp -r "/tmp/vulkan-sdk/1.2.131.2/x86_64/include/vulkan" "/usr/local/include"
-    sudo cp -P "/tmp/vulkan-sdk/1.2.131.2/x86_64/lib/libvulkan.so"* "/usr/local/lib"
-    sudo cp "/tmp/vulkan-sdk/1.2.131.2/x86_64/lib/libVkLayer_"*".so" "/usr/local/lib"
-    sudo mkdir -p "/usr/local/share/vulkan/explicit_layer.d"
-    sudo cp "/tmp/vulkan-sdk/1.2.131.2/x86_64/etc/vulkan/explicit_layer.d/VkLayer_"*".json" "/usr/local/share/vulkan/explicit_layer.d"
-    rm -r "/tmp/vulkan-sdk"
-    sudo ldconfig
     # common to arch-based distros
     if basedOn "$osname" "$archlinux"; then
         # code that has to be executed before downstream-specific distros
@@ -49,4 +40,14 @@ if basedOn "$osname" "$linux"; then
         # code that has to be executed after downstream-specific distros
     fi
     # code that has to be executed after downstream-specific distros
+    mkdir "/tmp/vulkan-sdk"
+    wget "$link_vulkan_sdk" -O "/tmp/vulkan-sdk/vulkan-sdk.tar.gz"
+    tar xvzf "/tmp/vulkan-sdk/vulkan-sdk.tar.gz" --directory "/tmp/vulkan-sdk"
+    sudo cp -r "/tmp/vulkan-sdk/1.2.131.2/x86_64/include/vulkan" "/usr/local/include"
+    sudo cp -P "/tmp/vulkan-sdk/1.2.131.2/x86_64/lib/libvulkan.so"* "/usr/local/lib"
+    sudo cp "/tmp/vulkan-sdk/1.2.131.2/x86_64/lib/libVkLayer_"*".so" "/usr/local/lib"
+    sudo mkdir -p "/usr/local/share/vulkan/explicit_layer.d"
+    sudo cp "/tmp/vulkan-sdk/1.2.131.2/x86_64/etc/vulkan/explicit_layer.d/VkLayer_"*".json" "/usr/local/share/vulkan/explicit_layer.d"
+    rm -r "/tmp/vulkan-sdk"
+    sudo ldconfig
 fi

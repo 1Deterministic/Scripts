@@ -1,6 +1,8 @@
 #!/bin/bash
 source config.sh
 
+link_apache_tomcat="https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.30/bin/apache-tomcat-9.0.30.tar.gz"
+
 # common to all linux distros
 if basedOn "$osname" "$linux"; then
     # code that has to be executed before downstream-specific distros
@@ -37,8 +39,7 @@ if basedOn "$osname" "$linux"; then
         fi
         # code that has to be executed after downstream-specific distros
     fi
-    # code that has to be executed after downstream-specific distros
-    link_apache_tomcat="https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.30/bin/apache-tomcat-9.0.30.tar.gz"
+    # code that has to be executed after downstream-specific distros    
     mkdir "/tmp/apache-tomcat"
     wget "$link_apache_tomcat" -O "/tmp/apache-tomcat/apache-tomcat.tar.gz"
     sudo tar xvzf "/tmp/apache-tomcat/apache-tomcat.tar.gz" --directory /opt

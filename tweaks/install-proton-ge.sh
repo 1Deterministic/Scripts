@@ -1,15 +1,11 @@
 #!/bin/bash
 source config.sh
 
+link_proton_ge="https://github.com/GloriousEggroll/proton-ge-custom/releases/download/5.2-GE-2/Proton-5.2-GE-2.tar.gz"
+
 # common to all linux distros
 if basedOn "$osname" "$linux"; then
     # code that has to be executed before downstream-specific distros
-    link_proton_ge="https://github.com/GloriousEggroll/proton-ge-custom/releases/download/5.2-GE-2/Proton-5.2-GE-2.tar.gz"
-    mkdir "/tmp/proton-ge"
-    wget "$link_proton_ge" -O "/tmp/proton-ge/proton-ge.tar.gz"
-    mkdir "/home/$username/.steam/root/compatibilitytools.d"
-    tar -xvf "/tmp/proton-ge/proton-ge.tar.gz" --directory "/home/$username/.steam/root/compatibilitytools.d"
-    rm -r "/tmp/proton-ge"
     # common to arch-based distros
     if basedOn "$osname" "$archlinux"; then
         # code that has to be executed before downstream-specific distros
@@ -44,4 +40,13 @@ if basedOn "$osname" "$linux"; then
         # code that has to be executed after downstream-specific distros
     fi
     # code that has to be executed after downstream-specific distros
+    if [[ -L "/home/$username/.steam" ]]; then
+        mkdir "/tmp/proton-ge"
+        wget "$link_proton_ge" -O "/tmp/proton-ge/proton-ge.tar.gz"
+        mkdir "/home/$username/.steam/root/compatibilitytools.d"
+        tar -xvf "/tmp/proton-ge/proton-ge.tar.gz" --directory "/home/$username/.steam/root/compatibilitytools.d"
+        rm -r "/tmp/proton-ge"
+    else
+        echo "You must install Steam and run it at least once before installing Proton GE"
+    fi
 fi

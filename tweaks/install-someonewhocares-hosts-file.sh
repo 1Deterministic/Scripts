@@ -1,12 +1,11 @@
 #!/bin/bash
 source config.sh
 
+link_someonewhocares_hosts="http://someonewhocares.org/hosts/hosts"
+
 # common to all linux distros
 if basedOn "$osname" "$linux"; then
     # code that has to be executed before downstream-specific distros
-    link_someonewhocares_hosts="http://someonewhocares.org/hosts/hosts"
-    wget "$link_someonewhocares_hosts" -O "/tmp/hosts"
-    sudo mv "/tmp/hosts" "/etc/hosts"
     # common to arch-based distros
     if basedOn "$osname" "$archlinux"; then
         # code that has to be executed before downstream-specific distros
@@ -41,4 +40,6 @@ if basedOn "$osname" "$linux"; then
         # code that has to be executed after downstream-specific distros
     fi
     # code that has to be executed after downstream-specific distros
+    wget "$link_someonewhocares_hosts" -O "/tmp/hosts"
+    sudo mv "/tmp/hosts" "/etc/hosts"
 fi

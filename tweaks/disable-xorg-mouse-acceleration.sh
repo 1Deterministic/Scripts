@@ -4,8 +4,6 @@ source config.sh
 # common to all linux distros
 if basedOn "$osname" "$linux"; then
     # code that has to be executed before downstream-specific distros
-    sudo mkdir "/etc/X11/xorg.conf.d"
-    sudo bash -c "cat strings/config-flat-accelprofile > /etc/X11/xorg.conf.d/50-mouse-acceleration.conf"
     # common to arch-based distros
     if basedOn "$osname" "$archlinux"; then
         # code that has to be executed before downstream-specific distros
@@ -40,4 +38,6 @@ if basedOn "$osname" "$linux"; then
         # code that has to be executed after downstream-specific distros
     fi
     # code that has to be executed after downstream-specific distros
+    sudo mkdir "/etc/X11/xorg.conf.d"
+    sudo bash -c "cat strings/config-flat-accelprofile > /etc/X11/xorg.conf.d/50-mouse-acceleration.conf"
 fi

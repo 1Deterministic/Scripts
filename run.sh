@@ -35,6 +35,7 @@ find . -name "*.sh" -exec chmod +x {} \;
 # tweaks/install-proton-ge.sh # you must install and run steam at least once before installing this
 # tweaks/enable-valve-aco.sh
 # tweaks/fix-vlc-youtube-links.sh
+# tweaks/disable-ssh-password-authentication.sh
 
 # basic apps for kde
 # apps/ark.sh

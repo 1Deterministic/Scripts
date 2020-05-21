@@ -3,9 +3,7 @@ source config.sh
 
 # common to all linux distros
 if basedOn "$osname" "$linux"; then
-    # code that has to be executed before downstream-specific distros
-    mkdir -p "/home/$username/.local/share/vlc/lua/playlist"
-    cp "strings/config-vlc-yt" "/home/$username/.local/share/vlc/lua/playlist/youtube.lua"
+    # code that has to be executed before downstream-specific distros    
     # common to arch-based distros
     if basedOn "$osname" "$archlinux"; then
         # code that has to be executed before downstream-specific distros
@@ -40,4 +38,6 @@ if basedOn "$osname" "$linux"; then
         # code that has to be executed after downstream-specific distros
     fi
     # code that has to be executed after downstream-specific distros
+    mkdir -p "/home/$username/.local/share/vlc/lua/playlist"
+    cp "strings/config-vlc-yt" "/home/$username/.local/share/vlc/lua/playlist/youtube.lua"
 fi
