@@ -36,7 +36,7 @@ if basedOn "$osname" "$linux"; then
     # common to fedora-based distros
     elif basedOn "$osname" "$fedora"; then
         # code that has to be executed before downstream-specific distros
-        sudo dnf install arduino -y
+        sudo dnf install arduino java-1.8.0-openjdk -y
         sudo usermod -aG dialout "$username"
         sudo usermod -aG lock "$username"
         # fedora-specific
