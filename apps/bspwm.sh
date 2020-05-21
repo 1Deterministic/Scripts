@@ -12,10 +12,9 @@ if basedOn "$osname" "$linux"; then
         # to use lightdm uncomment these lines
         # sudo pacman -S lightdm lightdm-gtk-greeter --noconfirm
         # sudo systemctl enable lightdm
-        mkdir "/home/$username/.config"
-        mkdir "/home/$username/.config/bspwm"
+        mkdir -p "/home/$username/.config/bspwm"
         cp "/usr/share/doc/bspwm/examples/bspwmrc" "/home/$username/.config/bspwm"
-        mkdir "/home/$username/.config/sxhkd"
+        mkdir -p "/home/$username/.config/sxhkd"
         cp "/usr/share/doc/bspwm/examples/sxhkdrc" "/home/$username/.config/sxhkd"
         # arch linux-specific
         if [[ "$osname" == "$archlinux" ]]; then
@@ -48,10 +47,9 @@ if basedOn "$osname" "$linux"; then
         # sudo systemctl enable lightdm
         # sudo systemctl set-default graphical.target
         # sudo dracut -f
-        mkdir "/home/$username/.config"
-        mkdir "/home/$username/.config/bspwm"
+        mkdir -p "/home/$username/.config/bspwm"
         cp "/usr/share/doc/bspwm/examples/bspwmrc" "/home/$username/.config/bspwm"
-        mkdir "/home/$username/.config/sxhkd"
+        mkdir -p "/home/$username/.config/sxhkd"
         cp "/usr/share/doc/bspwm/examples/sxhkdrc" "/home/$username/.config/sxhkd"
         # fedora-specific
         if [[ "$osname" == "$fedora" ]]; then

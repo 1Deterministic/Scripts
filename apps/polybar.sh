@@ -32,7 +32,7 @@ if basedOn "$osname" "$linux"; then
     elif basedOn "$osname" "$fedora"; then
         # code that has to be executed before downstream-specific distros
         sudo dnf install polybar -y
-        mkdir "/home/$username/.config/polybar"
+        mkdir -p "/home/$username/.config/polybar"
         cp "/usr/share/doc/polybar/config" "/home/$username/.config/polybar/config"
         # you will have to remove the i3 module from the polybar config file if using the example bar
         # fedora-specific
