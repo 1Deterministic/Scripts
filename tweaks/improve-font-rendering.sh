@@ -5,8 +5,8 @@ source config.sh
 if basedOn "$osname" "$linux"; then
     # code that has to be executed before downstream-specific distros
     mkdir -p "/home/$username/.config/fontconfig"
-    bash -c "cat strings/config-fonts > /home/$username/.config/fontconfig/fonts.conf"
-    bash -c "cat strings/config-xresources > /home/$username/.Xresources"
+    cat "strings/config-fonts" > "/home/$username/.config/fontconfig/fonts.conf"
+    cat "strings/config-xresources" > "/home/$username/.Xresources"
     xrdb -merge "/home/$username/.Xresources"
     fc-cache -fv
 
