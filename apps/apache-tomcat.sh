@@ -42,7 +42,7 @@ if basedOn "$osname" "$linux"; then
     # code that has to be executed after downstream-specific distros    
     mkdir "/tmp/apache-tomcat"
     wget "$link_apache_tomcat" -O "/tmp/apache-tomcat/apache-tomcat.tar.gz"
-    sudo tar xvzf "/tmp/apache-tomcat/apache-tomcat.tar.gz" --directory /opt
+    sudo tar xf "/tmp/apache-tomcat/apache-tomcat.tar.gz" --directory "/opt"
     sudo chmod +x -R "/opt/apache-tomcat-9.0.30"
     rm -r "/tmp/apache-tomcat"
 fi

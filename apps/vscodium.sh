@@ -43,7 +43,7 @@ if basedOn "$osname" "$linux"; then
     mkdir "/tmp/vscodium"
     wget "$link_vscodium" -O "/tmp/vscodium/vscodium.tar.gz"
     sudo mkdir "/opt/vscodium"
-    sudo tar xvzf "/tmp/vscodium/vscodium.tar.gz" --directory "/opt/vscodium"
+    sudo tar xf "/tmp/vscodium/vscodium.tar.gz" --directory "/opt/vscodium"
     sudo chmod +x "/opt/vscodium/codium"
     rm -r "/tmp/vscodium"
     sudo bash -c "cat strings/launcher-vscodium > /usr/share/applications/vscodium.desktop"

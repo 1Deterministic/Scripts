@@ -21,7 +21,7 @@ if basedOn "$osname" "$linux"; then
             sudo apt install retroarch libretro-* -y
             sudo apt purge gnome-games-app -y
             mkdir "/tmp/retroarch"
-            tar xvzf assets/retroarch.tar.gz --directory /tmp/retroarch
+            tar xf assets/retroarch.tar.gz --directory /tmp/retroarch
             cd "/tmp/retroarch"
                 sudo "./configure"
                 sudo make

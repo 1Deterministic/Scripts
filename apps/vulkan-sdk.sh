@@ -42,7 +42,7 @@ if basedOn "$osname" "$linux"; then
     # code that has to be executed after downstream-specific distros
     mkdir "/tmp/vulkan-sdk"
     wget "$link_vulkan_sdk" -O "/tmp/vulkan-sdk/vulkan-sdk.tar.gz"
-    tar xvzf "/tmp/vulkan-sdk/vulkan-sdk.tar.gz" --directory "/tmp/vulkan-sdk"
+    tar xf "/tmp/vulkan-sdk/vulkan-sdk.tar.gz" --directory "/tmp/vulkan-sdk"
     sudo cp -r "/tmp/vulkan-sdk/1.2.131.2/x86_64/include/vulkan" "/usr/local/include"
     sudo cp -P "/tmp/vulkan-sdk/1.2.131.2/x86_64/lib/libvulkan.so"* "/usr/local/lib"
     sudo cp "/tmp/vulkan-sdk/1.2.131.2/x86_64/lib/libVkLayer_"*".so" "/usr/local/lib"

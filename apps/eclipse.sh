@@ -44,7 +44,7 @@ if basedOn "$osname" "$linux"; then
     # code that has to be executed after downstream-specific distros
     mkdir "/tmp/eclipse"
     wget "$link_eclipse" -O "/tmp/eclipse/eclipse.tar.gz"
-    sudo tar -zxvf "/tmp/eclipse/eclipse.tar.gz" -C "/usr/"
+    sudo tar xf "/tmp/eclipse/eclipse.tar.gz" --directory "/usr"
     rm -r "/tmp/eclipse"
     sudo ln -s "/usr/eclipse/eclipse" "/usr/bin/eclipse"
     sudo bash -c "cat strings/launcher-eclipse > /usr/share/applications/eclipse.desktop"

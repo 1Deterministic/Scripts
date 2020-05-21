@@ -39,5 +39,5 @@ if basedOn "$osname" "$linux"; then
     fi
     # code that has to be executed after downstream-specific distros
     sudo mkdir "/usr/share/fonts/extra-fonts"
-    sudo tar xvzf "assets/fonts.tar.gz" --directory "/usr/share/fonts/extra-fonts"
+    sudo tar xf "assets/fonts.tar.gz" --directory "/usr/share/fonts/extra-fonts"
 fi

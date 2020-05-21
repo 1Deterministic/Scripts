@@ -44,7 +44,7 @@ if basedOn "$osname" "$linux"; then
     # code that has to be executed after downstream-specific distros
     mkdir "/tmp/android-studio"
     wget "$link_android_studio" -O "/tmp/android-studio/android-studio.tar.gz"
-    sudo tar xvzf "/tmp/android-studio/android-studio.tar.gz" --directory "/opt"
+    sudo tar xf "/tmp/android-studio/android-studio.tar.gz" --directory "/opt"
     rm -r "/tmp/android-studio"
     sudo bash -c "cat strings/launcher-android-studio > /usr/share/applications/android-studio.desktop" 
 fi

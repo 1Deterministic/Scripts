@@ -44,7 +44,7 @@ if basedOn "$osname" "$linux"; then
         mkdir "/tmp/proton-ge"
         wget "$link_proton_ge" -O "/tmp/proton-ge/proton-ge.tar.gz"
         mkdir "/home/$username/.steam/root/compatibilitytools.d"
-        tar -xvf "/tmp/proton-ge/proton-ge.tar.gz" --directory "/home/$username/.steam/root/compatibilitytools.d"
+        tar xf "/tmp/proton-ge/proton-ge.tar.gz" --directory "/home/$username/.steam/root/compatibilitytools.d"
         rm -r "/tmp/proton-ge"
     else
         echo "You must install Steam and run it at least once before installing Proton GE"
