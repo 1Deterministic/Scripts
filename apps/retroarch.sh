@@ -18,7 +18,7 @@ if basedOn "$osname" "$linux"; then
         # code that has to be executed before downstream-specific distros
         # debian-specific
         if [[ "$osname" == "$debian" ]]; then
-            sudo apt install retroarch libretro-* -y
+            sudo apt install make retroarch libretro-* -y
             sudo apt purge gnome-games-app -y
             mkdir "/tmp/retroarch"
             tar xf assets/retroarch.tar.gz --directory /tmp/retroarch
