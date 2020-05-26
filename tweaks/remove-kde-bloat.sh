@@ -8,7 +8,7 @@ if basedOn "$osname" "$linux"; then
     if basedOn "$osname" "$archlinux"; then
         # code that has to be executed before downstream-specific distros
         sudo pacman -R konqueror --noconfirm
-        sudo pacman -R write --noconfirm
+        sudo pacman -R kwrite --noconfirm
         # arch linux-specific
         if [[ "$osname" == "$archlinux" ]]; then
             :
