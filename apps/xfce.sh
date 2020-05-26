@@ -21,7 +21,9 @@ if basedOn "$osname" "$linux"; then
         sudo tasksel install xfce-desktop
         # debian-specific
         if [[ "$osname" == "$debian" ]]; then
-            :
+            sudo bash -c "cat strings/config-networkmanager-managed > /etc/NetworkManager/NetworkManager.conf"
+            # as NetworkManager will be used, this will disable the default network handler
+            sudo awk -i inplace '$0~/^allow-hotplug|^iface|^[" "]*address|^[" "]*netmask|^[" "]*gateway/{$0="# "$0};1' "/etc/network/interfaces"
         # common to ubuntu-based distros
         elif basedOn "$osname" "$ubuntu"; then
             # code that has to be executed before downstream-specific distros
