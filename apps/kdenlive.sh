@@ -33,7 +33,7 @@ if basedOn "$osname" "$linux"; then
     # common to fedora-based distros
     elif basedOn "$osname" "$fedora"; then
         # code that has to be executed before downstream-specific distros
-        sudo dnf install kdenlive frei0r-plugins -y
+        sudo dnf install kdenlive frei0r-plugins qt5-qtquickcontrols -y
         # fedora-specific
         if [[ "$osname" == "$fedora" ]]; then
             # temporary fix for Lmod breaking theming on spectacle and vlc
