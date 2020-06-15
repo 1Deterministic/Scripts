@@ -36,6 +36,7 @@ find . -name "*.sh" -exec chmod +x {} \;
 # tweaks/enable-valve-aco.sh
 # tweaks/fix-vlc-youtube-links.sh
 # tweaks/disable-ssh-password-authentication.sh
+# tweaks/install-all-retroarch-cores.sh
 
 # basic apps for kde
 # apps/ark.sh
@@ -108,3 +109,5 @@ find . -name "*.sh" -exec chmod +x {} \;
 # apps/mariadb.sh
 # apps/apache-tomcat.sh # installs to /opt
 # apps/vulkan-sdk.sh
+# apps/docker.sh
+# apps/podman.sh
