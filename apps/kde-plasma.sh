@@ -7,7 +7,7 @@ if basedOn "$osname" "$linux"; then
     # common to arch-based distros
     if basedOn "$osname" "$archlinux"; then
         # code that has to be executed before downstream-specific distros
-        sudo pacman -S plasma-meta kdebase kde-gtk-config networkmanager print-manager cups haveged packagekit-qt5 xdg-user-dirs --noconfirm
+        sudo pacman -S plasma-meta dolphin kfind konsole kate kde-gtk-config networkmanager print-manager cups haveged packagekit-qt5 xdg-user-dirs --noconfirm
         sudo systemctl enable haveged NetworkManager sddm org.cups.cupsd
         sudo systemctl set-default graphical.target
         # arch linux-specific

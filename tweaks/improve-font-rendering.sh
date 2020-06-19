@@ -14,9 +14,6 @@ if basedOn "$osname" "$linux"; then
     if basedOn "$osname" "$archlinux"; then
         # code that has to be executed before downstream-specific distros
         sudo bash -c "cat strings/config-freetype-version >> /etc/profile.d/freetype2.sh"
-        sudo ln -s "/etc/fonts/conf.avail/70-no-bitmaps.conf" "/etc/fonts/conf.d"
-        sudo ln -s "/etc/fonts/conf.avail/10-sub-pixel-rgb.conf" "/etc/fonts/conf.d"
-        sudo ln -s "/etc/fonts/conf.avail/11-lcdfilter-default.conf" "/etc/fonts/conf.d"
         # arch linux-specific
         if [[ "$osname" == "$archlinux" ]]; then
             :

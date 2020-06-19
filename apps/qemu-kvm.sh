@@ -14,6 +14,7 @@ if basedOn "$osname" "$linux"; then
         sudo systemctl enable ebtables
         sudo systemctl enable dnsmasq
         sudo bash -c "cat strings/config-ovmf-nvram >> /etc/libvirt/qemu.conf"
+        sudo sed -i "s,--timeout 120,," "/etc/conf.d/libvirtd"
         # arch linux-specific
         if [[ "$osname" == "$archlinux" ]]; then
             :
