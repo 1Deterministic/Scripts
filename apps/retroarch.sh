@@ -43,6 +43,7 @@ if basedOn "$osname" "$linux"; then
     # common to fedora-based distros
     elif basedOn "$osname" "$fedora"; then
         # code that has to be executed before downstream-specific distros
+        sudo dnf install retroarch retroarch-assets retroarch-database retroarch-filters -y
         # fedora-specific
         if [[ "$osname" == "$fedora" ]]; then
             :
