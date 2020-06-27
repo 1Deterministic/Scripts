@@ -26,8 +26,8 @@ if basedOn "$osname" "$linux"; then
         sudo systemctl enable smbd
         sudo bash -c "cat strings/config-samba > /etc/samba/smb.conf"
         sudo smbpasswd -a "$username"
-        sudo ufw allow samba
-        sudo ufw reload
+        sudo firewall-cmd --add-service=samba --permanent
+        sudo firewall-cmd --reload
         # debian-specific
         if [[ "$osname" == "$debian" ]]; then
             :

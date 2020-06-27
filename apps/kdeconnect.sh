@@ -9,8 +9,8 @@ if basedOn "$osname" "$linux"; then
         # code that has to be executed before downstream-specific distros
         sudo pacman -S kdeconnect sshfs --noconfirm
         sudo bash -c "cat strings/ufw-kdeconnect > /etc/ufw/applications.d/kdeconnect"
-        sudo ufw allow kdeconnect
-        sudo ufw reload
+        sudo firewall-cmd --add-service=kdeconnect --permanent
+        sudo firewall-cmd --reload
         # arch linux-specific
         if [[ "$osname" == "$archlinux" ]]; then
             :

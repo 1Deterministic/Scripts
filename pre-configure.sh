@@ -9,12 +9,10 @@ if basedOn "$osname" "$linux"; then
         # code that has to be executed before downstream-specific distros
         sudo bash -c "cat strings/config-arch-repo >> /etc/pacman.conf"
         sudo pacman -Syyu
-        sudo pacman -S git wget ufw --noconfirm
-        sudo ufw enable
-        sudo systemctl enable ufw
-        sudo ufw default deny incoming
-        sudo ufw default allow outgoing
-        sudo ufw reload
+        sudo pacman -S git wget firewalld --noconfirm
+        sudo systemctl enable firewalld
+        sudo systemctl start firewalld
+        sudo firewall-cmd --reload
         # arch linux-specific
         if [[ "$osname" == "$archlinux" ]]; then
             :

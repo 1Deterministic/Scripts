@@ -9,8 +9,8 @@ if basedOn "$osname" "$linux"; then
         # code that has to be executed before downstream-specific distros
         sudo pacman -S openssh --noconfirm
         sudo systemctl enable sshd
-        sudo ufw allow ssh
-        sudo ufw reload
+        sudo firewall-cmd --add-service=ssh --permanent
+        sudo firewall-cmd --reload
         # arch linux-specific
         if [[ "$osname" == "$archlinux" ]]; then
             :

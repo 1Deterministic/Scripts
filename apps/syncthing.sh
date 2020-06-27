@@ -9,8 +9,8 @@ if basedOn "$osname" "$linux"; then
         # code that has to be executed before downstream-specific distros
         sudo pacman -S syncthing --noconfirm
         sudo systemctl enable syncthing@"$username".service
-        sudo ufw allow syncthing
-        sudo ufw reload
+        sudo firewall-cmd --add-service=syncthing --permanent
+        sudo firewall-cmd --reload
         # arch linux-specific
         if [[ "$osname" == "$archlinux" ]]; then
             :
