@@ -7,7 +7,7 @@ if basedOn "$osname" "$linux"; then
     # common to arch-based distros
     if basedOn "$osname" "$archlinux"; then
         # code that has to be executed before downstream-specific distros
-        sudo pacman -S nodejs --noconfirm
+        sudo pacman -S jdk-openjdk --noconfirm
         # arch linux-specific
         if [[ "$osname" == "$archlinux" ]]; then
             :
@@ -16,8 +16,6 @@ if basedOn "$osname" "$linux"; then
     # common to debian-based distros
     elif basedOn "$osname" "$debian"; then
         # code that has to be executed before downstream-specific distros
-        sudo apt install nodejs npm -y
-        npm config set ignore-scripts true
         # debian-specific
         if [[ "$osname" == "$debian" ]]; then
             :
@@ -34,8 +32,6 @@ if basedOn "$osname" "$linux"; then
     # common to fedora-based distros
     elif basedOn "$osname" "$fedora"; then
         # code that has to be executed before downstream-specific distros
-        sudo dnf install nodejs -y
-        npm config set ignore-scripts true
         # fedora-specific
         if [[ "$osname" == "$fedora" ]]; then
             :

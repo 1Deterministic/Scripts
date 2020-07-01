@@ -7,6 +7,7 @@ if basedOn "$osname" "$linux"; then
     # common to arch-based distros
     if basedOn "$osname" "$archlinux"; then
         # code that has to be executed before downstream-specific distros
+        sudo pacman -S podman --noconfirm
         # arch linux-specific
         if [[ "$osname" == "$archlinux" ]]; then
             :

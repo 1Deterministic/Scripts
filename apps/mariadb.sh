@@ -7,6 +7,9 @@ if basedOn "$osname" "$linux"; then
     # common to arch-based distros
     if basedOn "$osname" "$archlinux"; then
         # code that has to be executed before downstream-specific distros
+        sudo pacman -S mariadb --noconfirm
+        sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+        sudo systemctl enable mariadb.service
         # arch linux-specific
         if [[ "$osname" == "$archlinux" ]]; then
             :

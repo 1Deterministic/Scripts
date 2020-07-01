@@ -96,9 +96,11 @@ find . -name "*.sh" -exec chmod +x {} \;
 
 # development tools
 # apps/git.sh
+# apps/gcc.sh
 # apps/vscodium.sh # installs to /opt
 # apps/allegro.sh
 # apps/arduino.sh
+# apps/java.sh
 # apps/eclipse.sh
 # apps/android-studio.sh # installs to /opt
 # apps/postgresql.sh
