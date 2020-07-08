@@ -44,8 +44,9 @@ if basedOn "$osname" "$linux"; then
     mkdir "/tmp/protonmail"
     wget "$link_protonmail_desktop_icon" -O "/tmp/protonmail/icon.png"
     wget "$link_protonmail_desktop" -O "/tmp/protonmail/protonmail.tar.gz"
-    sudo tar xf "/tmp/protonmail/protonmail.tar.gz" --directory "/opt"
-    sudo cp "/tmp/protonmail/icon.png" "/opt/protonmail-desktop-unofficial-1.0.4"
+    sudo mkdir "/opt/protonmail-desktop"
+    sudo tar --strip-components=1 xf "/tmp/protonmail/protonmail.tar.gz" --directory "/opt/protonmail-desktop"
+    sudo cp "/tmp/protonmail/icon.png" "/opt/protonmail-desktop"
     sudo bash -c "cat strings/launcher-protonmail-desktop > /usr/share/applications/protonmail-desktop.desktop"
     rm -r "/tmp/protonmail"
 fi

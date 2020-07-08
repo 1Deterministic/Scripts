@@ -42,9 +42,10 @@ if basedOn "$osname" "$linux"; then
     # code that has to be executed after downstream-specific distros
     mkdir "/tmp/freetube"
     wget "$link_freetube" -O "/tmp/freetube/freetube.tar.xz"
-    sudo tar xf "/tmp/freetube/freetube.tar.xz" --directory "/opt"
+    sudo mkdir "/opt/freetube"
+    sudo tar --strip-components=1 xf "/tmp/freetube/freetube.tar.xz" --directory "/opt/freetube"
     sudo bash -c "cat strings/launcher-freetube > /usr/share/applications/freetube.desktop"
     rm -r "/tmp/freetube"
-    sudo chown root:root -R "/opt/FreeTube-0.7.2/chrome-sandbox"
-    sudo chmod 4755 "/opt/FreeTube-0.7.2/chrome-sandbox"
+    sudo chown root:root -R "/opt/freetube/chrome-sandbox"
+    sudo chmod 4755 "/opt/freetube/chrome-sandbox"
 fi
