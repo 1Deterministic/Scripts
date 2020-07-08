@@ -8,6 +8,7 @@ if basedOn "$osname" "$linux"; then
     if basedOn "$osname" "$archlinux"; then
         # code that has to be executed before downstream-specific distros
         sudo pacman -S nodejs --noconfirm
+        npm config set ignore-scripts true
         # arch linux-specific
         if [[ "$osname" == "$archlinux" ]]; then
             :
