@@ -9,6 +9,7 @@ if basedOn "$osname" "$linux"; then
         # code that has to be executed before downstream-specific distros
         sudo pacman -S postgresql --noconfirm
         sudo su - postgres -c "initdb --locale=pt_BR.UTF-8 -E UTF8 -D /var/lib/postgres/data"
+        sudo systemctl enable postgresql
         # sudo su -c "passwd postgres"
         # sudo bash -c "cat strings/config-postgresql > /var/lib/postgres/data/pg_hba.conf"
         # sudo firewall-cmd --add-service=postgresql --permanent
