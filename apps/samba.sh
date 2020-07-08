@@ -11,9 +11,8 @@ if basedOn "$osname" "$linux"; then
         sudo systemctl enable smb nmb
         sudo bash -c "cat strings/config-samba > /etc/samba/smb.conf"
         sudo smbpasswd -a "$username"
-        sudo bash -c "cat strings/ufw-samba > /etc/ufw/applications.d/samba"
-        sudo ufw allow samba
-        sudo ufw reload
+        sudo firewall-cmd --add-service=samba --permanent
+        sudo firewall-cmd --reload
         # arch linux-specific
         if [[ "$osname" == "$archlinux" ]]; then
             :
