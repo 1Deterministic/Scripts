@@ -7,7 +7,7 @@ if basedOn "$osname" "$linux"; then
     # common to arch-based distros
     if basedOn "$osname" "$archlinux"; then
         # code that has to be executed before downstream-specific distros
-        sudo pacman -S xorg-server xfce4 xdg-user-dirs lightdm lightdm-gtk-greeter networkmanager pulseaudio pavucontrol file-roller --noconfirm
+        sudo pacman -S xorg-server xfce4 xdg-user-dirs lightdm lightdm-gtk-greeter networkmanager pulseaudio pavucontrol file-roller gvfs --noconfirm
         sudo systemctl enable lightdm NetworkManager
         sudo systemctl set-default graphical.target
         # arch linux-specific
